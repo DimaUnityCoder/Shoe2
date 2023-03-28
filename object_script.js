@@ -14,6 +14,9 @@ var vansButton = document.querySelector("#vansButton")
 var forcesButton = document.querySelector("#forcesButton")
 var everythingButton = document.querySelector("#everythingButton")
 var subNewShoe = document.querySelector("#submitNewShoe")
+var openShoeAdder = document.getElementById("openShoeAdder")
+var closeShoeAdder = document.getElementById("closeShoeAdder")
+var shoeAdderWindow = document.getElementById("shoeAdd")
 
 
 //var everythingButton = document.querySelector("#everythingButton")
@@ -87,7 +90,21 @@ vansButton.addEventListener("click", () => buildShoePage(3));
 dunkButton.addEventListener("click", () => buildShoePage(4));
 everythingButton.addEventListener("click", () => buildShoePage(5))
 subNewShoe.addEventListener("click", () => addNewProduct(document.getElementById("shoeLink").value,document.getElementById("shoeName").value,document.getElementById("shoePic").value,document.getElementById("shoeType").value,))
+openShoeAdder.addEventListener("click", () => openShoeAdderWindow())
+closeShoeAdder.addEventListener("click", () => closeShoeAdderWindow())
 //everythingButton.addEventListener("click", buildShoePage())
+
+
+function closeShoeAdderWindow(){
+    console.log("Window should be closed")
+    shoeAdderWindow.style.display = "none";
+    openShoeAdder.style.display = "block"; 
+}
+function openShoeAdderWindow(){
+    console.log("Window should be opened")
+    shoeAdderWindow.style.display = "block";
+    openShoeAdder.style.display = "none"; 
+}
 
 function removePreviousElements(){
     while(theProductScreen.firstChild){

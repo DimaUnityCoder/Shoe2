@@ -29,31 +29,40 @@
         <main>
             <h2>Results:</h2>
             <div class="wrapper" id="prodScreen">
-                <section id="-1">
-                    <a href="https://www.youtube.com">
-                        <img src="https://www.firstbenefits.org/wp-content/uploads/2017/10/placeholder.png" alt="shoe"> 
-                    </a>
-                    <br>
-                    <h3>name</h3>
-                    <a href="https://www.youtube.com"> buy the product</a>
-                </section>
                 
                 
             </div>
         </main>
-        
-
-        <div id="shoeAdd">
-            <h3>Here you can add a new shoe</h3>
-            <input type="text" class = "shoeInput" id = "shoeLink"placeholder="Enter link to the shoe here..." id="cityinput"><br>
-            <input type="text" class = "shoeInput" id = "shoeName"placeholder="Enter the name of the shoe here..." id="cityinput"><br>
-            <input type="text" class = "shoeInput" id = "shoePic"placeholder="Enter link to the picture of the shoe here..." id="cityinput"><br>
-            <input type="text" class = "shoeInput" id = "shoeType"placeholder="Enter which shoe it resembles..." id="cityinput">
-            <p> (Enter 1 if it resembles Air Forces, 2 if Jordans, 3 if Vans and 4 if Dunks)</p>
-            <button class="button" id="submitNewShoe">
-                <p>Submit</p>
-            </button>
+        <div style="float: right;">
+            <div >
+                <button id="openShoeAdder" class="button" style="background-color: lime;">
+                    Add new shoe
+                </button>
+            </div>
+            <div id="shoeAdd" style="display: none;">
+                <h3>Here you can add a new shoe</h3>
+                <input type="text" class = "shoeInput" id = "shoeLink"placeholder="Enter link to the shoe here..." id="cityinput"><br>
+                <input type="text" class = "shoeInput" id = "shoeName"placeholder="Enter the name of the shoe here..." id="cityinput"><br>
+                <input type="text" class = "shoeInput" id = "shoePic"placeholder="Enter link to the picture of the shoe here..." id="cityinput"><br>
+                <input type="text" class = "shoeInput" id = "shoeType"placeholder="Enter which shoe it resembles..." id="cityinput">
+                <p> (Enter 1 if it resembles Air Forces, 2 if Jordans, 3 if Vans and 4 if Dunks)</p>
+                
+                <div style="display: flex;">
+                    <div>
+                        <button class="button" id="submitNewShoe">
+                            <p>Submit</p>
+                        </button>
+                    </div>
+                    <div style="align-self: flex-end;">
+                        <button class="button" id="closeShoeAdder">
+                            <p>Close</p>
+                        </button>
+                    </div>
+                </div>           
+            </div>
         </div>
+        
+        
         <script src="object_script.js"></script>
         
     </body>
