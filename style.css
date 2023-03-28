@@ -1,0 +1,40 @@
+.button{
+    margin: 0 20px 0 20px;
+    padding: 5px 20px 5px 20px;
+    width: 10vh;
+
+    border: 2px solid black;
+}
+a{
+    color: black;
+}
+.wrapper{
+    display: flex;
+    align-content: space-between;
+    flex-wrap: wrap;
+}
+header{
+    position: sticky;
+    border: 2px solid black;
+    padding: 20px 20px 20px 20px;
+    width: fit-content;
+    height: 15vh;
+}
+img{
+    height: 100px;
+}
+section{
+    border: 2px solid black;
+    margin: 10px
+    
+}
+#shoeAdd{
+    float: right;
+    border: 2px solid black;
+    padding: 10px 10px 10px 10px;
+    display: inline;
+}
+input{
+    margin-bottom: 10px;
+    width: 100%;
+}
