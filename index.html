@@ -6,22 +6,24 @@
     <body>
         
         <header>
-            <h2>the title</h2> <br>
-            <div class="wrapper">
+            <h2>The look-a-like finder</h2>
+            <p  class="text">The website where you can find shoes that resemble 
+                shoes from popular brands enough to have similar look, but not enough to be considered a replica.</p>
+            <div class="wrapper" style="justify-content: center;">
                 <button class="button" id="forcesButton">
-                    <p>Air Forces</p>
+                    <h4>Air Forces</h4>
                 </button>
                 <button class="button" id="jordansButton">
-                    <p>Jordans</p>
+                    <h4>Jordans</h4>
                 </button>
                 <button class="button" id="vansButton">
-                    <p>Vans</p>
+                    <h4>Vans</h4>
                 </button>
                 <button class="button" id="dunksButton">
-                    <p>Dunks</p>
+                    <h4>Dunks</h4>
                 </button>
                 <button class="button" id="everythingButton">
-                    <p>Everything</p>
+                    <h4>Everything</h4>
                 </button>
             </div>
             
@@ -36,17 +38,26 @@
         <div style="float: right;">
             <div >
                 <button id="openShoeAdder" class="button" style="background-color: lime;">
-                    Add new shoe
+                    <h4>Add new shoe</h4>
                 </button>
             </div>
             <div id="shoeAdd" style="display: none;">
                 <h3>Here you can add a new shoe</h3>
-                <input type="text" class = "shoeInput" id = "shoeLink"placeholder="Enter link to the shoe here..." id="cityinput"><br>
-                <input type="text" class = "shoeInput" id = "shoeName"placeholder="Enter the name of the shoe here..." id="cityinput"><br>
-                <input type="text" class = "shoeInput" id = "shoePic"placeholder="Enter link to the picture of the shoe here..." id="cityinput"><br>
-                <input type="text" class = "shoeInput" id = "shoeType"placeholder="Enter which shoe it resembles..." id="cityinput">
-                <p> (Enter 1 if it resembles Air Forces, 2 if Jordans, 3 if Vans and 4 if Dunks)</p>
+                <input type="text" class = "shoeInput" id = "shoeLink"placeholder="Enter link to the shoe here..." ><br>
+                <input type="text" class = "shoeInput" id = "shoeName"placeholder="Enter the name of the shoe here..." ><br>
+                <input type="text" class = "shoeInput" id = "shoePic"placeholder="Enter link to the picture of the shoe here..." ><br>
+                <select name="types" id="shoeType" style="border: solid 2px black;">
+                    <option value="0">Choose which shoe it resembles...</option>
+                    <option value="1">Air Forces</option>
+                    <option value="2">Jordans</option>
+                    <option value="3">Vans</option>
+                    <option value="4">Dunks</option>
+                </select>
+                <p class="text"> (Enter 1 if it resembles Air Forces, 2 if Jordans, 3 if Vans and 4 if Dunks)</p>
+
                 
+
+
                 <div style="display: flex;">
                     <div>
                         <button class="button" id="submitNewShoe">

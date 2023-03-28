@@ -18,6 +18,45 @@ var openShoeAdder = document.getElementById("openShoeAdder")
 var closeShoeAdder = document.getElementById("closeShoeAdder")
 var shoeAdderWindow = document.getElementById("shoeAdd")
 
+var shoeLinkInputField = document.getElementById("shoeLink")
+var shoeNameInputField = document.getElementById("shoeName")
+var shoePicLinkInputField = document.getElementById("shoePic")
+var shoeTypeInputField = document.getElementById("shoeType")
+
+
+function startGradient(target) {
+    let startColor = "#ff0000"; // Change this to the starting color you want
+    let endColor = "#000000"; // Change this to the ending color you want
+    let duration = 2000; // Change this to the duration of the gradient in milliseconds
+  
+    let startTime = null;
+    let step = function(timestamp) {
+      if (!startTime) startTime = timestamp;
+      let progress = timestamp - startTime;
+      let percent = Math.min(progress / duration, 1);
+      let color = interpolateColor(startColor, endColor, percent);
+      target.style.borderColor = color; // Set the border color of the input element to the interpolated color
+      if (progress < duration) {
+        window.requestAnimationFrame(step);
+      }
+    };
+    window.requestAnimationFrame(step);
+  }
+  
+  
+  function interpolateColor(startColor, endColor, percent) {
+    let r1 = parseInt(startColor.substring(1, 3), 16);
+    let g1 = parseInt(startColor.substring(3, 5), 16);
+    let b1 = parseInt(startColor.substring(5, 7), 16);
+    let r2 = parseInt(endColor.substring(1, 3), 16);
+    let g2 = parseInt(endColor.substring(3, 5), 16);
+    let b2 = parseInt(endColor.substring(5, 7), 16);
+    let r = Math.round(r1 + (r2 - r1) * percent);
+    let g = Math.round(g1 + (g2 - g1) * percent);
+    let b = Math.round(b1 + (b2 - b1) * percent);
+    return "rgb(" + r + ", " + g + ", " + b + ")";
+  }
+  
 
 //var everythingButton = document.querySelector("#everythingButton")
 
@@ -65,11 +104,10 @@ function addNewProduct(link, name, picLink,type){
         picLink!== null &&
         name!==null && 
         link !== null && 
-        type!= null &&
         link !== "" &&
         name !== "" &&
         picLink !== "" &&
-        type !== ""
+        type.value !== "0"
         )
 
     {
@@ -78,10 +116,24 @@ function addNewProduct(link, name, picLink,type){
         productPicLink.push(picLink)
         productName.push(name)
         productLink.push(link)
-        productType.push(type)
+        productType.push(type.value)
         savePosts()
         
     }  
+    else{
+        if (picLink == ""){
+            startGradient(shoePicLinkInputField)
+        }
+        if (name == ""){
+            startGradient(shoeNameInputField)
+        }
+        if (link == ""){
+            startGradient(shoeLinkInputField)
+        }
+        if (type == "0"){
+            startGradient(shoeTypeInputField)
+        }
+    }
 }
 
 forcesButton.addEventListener("click", () => buildShoePage(1));
@@ -125,6 +177,7 @@ function buildShoePage(acceptableType){
             let image = document.createElement("img")
             let prodName = document.createElement("h3")        
             let prodLink = document.createElement("a")
+            let imageContainer = document.createElement("div")
             //const _break = document.createElement("br")
     
             prodName.id = `header${i}`
@@ -136,16 +189,18 @@ function buildShoePage(acceptableType){
             prodBox.appendChild(imageInLink)
             prodBox.appendChild(prodName)
             prodBox.appendChild(prodLink)
-            imageInLink.appendChild(image)
+            imageInLink.appendChild(imageContainer)
+            imageContainer.appendChild(image)
             
     
-    
+            prodBox.style.padding = "10px 10px 10px 10px"
             prodBox.id = productId[i]
             imageInLink.href = productLink[i]
             image.src = productPicLink[i]
             prodName.innerText = productName[i]
             prodLink.innerText = "Buy it here"
             prodLink.href = productLink[i]  
+            imageContainer.style.textAlign = "center"
         }
         else{
             continue; 
