@@ -107,16 +107,16 @@ function addNewProduct(link, name, picLink,type){
         link !== "" &&
         name !== "" &&
         picLink !== "" &&
-        type.value !== "0"
+        type !== "0"
         )
 
     {
-
+        console.log(type.value)
         productId.push(productId.length)
         productPicLink.push(picLink)
         productName.push(name)
         productLink.push(link)
-        productType.push(type.value)
+        productType.push(type)
         savePosts()
         
     }  
@@ -168,10 +168,9 @@ function removePreviousElements(){
 function buildShoePage(acceptableType){    
     removePreviousElements();
     fillArrays();
-    console.log("obamna")
     
     for(let i = 0; i < productId.length; i++){
-        if (productType[i] == acceptableType || acceptableType == 5){
+        if (productType[i] == acceptableType || acceptableType == 5 && productName!==null){
             let prodBox = document.createElement("section")
             let imageInLink = document.createElement("a")
             let image = document.createElement("img")

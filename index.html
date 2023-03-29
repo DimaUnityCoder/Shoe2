@@ -25,55 +25,76 @@
                 <button class="button" id="everythingButton">
                     <h4>Everything</h4>
                 </button>
+                
+                
+                
             </div>
             
         </header>
         <main>
-            <h2>Results:</h2>
-            <div class="wrapper" id="prodScreen">
+            <h2>Results:</h2> <br>
+            <div style="display: flex; align-content: flex-end;">
                 
-                
+                <div class="wrapper" id="prodScreen">
+                    
+                    
+                </div>
+                <div id="sidebar">
+                    <h2 style="margin: 10px 10px 10px 20px;">The sidebar</h2>
+                    <div style="margin: 10px;">
+                        <div>
+                            <button id="openShoeAdder" class="button" style="background-color: #BBD6B8">
+                                <h4>Add new shoe</h4>
+                            </button>
+                        </div>
+                        <div id="shoeAdd" style="display: none;">
+                            <h3>Here you can add a new shoe</h3>
+                            <input type="text" class = "shoeInput" id = "shoeLink"placeholder="Enter link to the shoe here..." ><br>
+                            <input type="text" class = "shoeInput" id = "shoeName"placeholder="Enter the name of the shoe here..." ><br>
+                            <input type="text" class = "shoeInput" id = "shoePic"placeholder="Enter link to the picture of the shoe here..." ><br>
+                            <select name="types" id="shoeType" style="border: solid 2px black; margin-bottom: 10px;">
+                                <option value="0">Choose which shoe it resembles...</option>
+                                <option value="1">Air Forces</option>
+                                <option value="2">Jordans</option>
+                                <option value="3">Vans</option>
+                                <option value="4">Dunks</option>
+                            </select>
+            
+                            
+            
+            
+                            <div style="display: flex; align-content: space-between;">
+                                <div>
+                                    <button class="button" id="submitNewShoe">
+                                        <p>Submit</p>
+                                    </button>
+                                </div>
+                                <div>
+                                    <button class="button" id="closeShoeAdder">
+                                        <p>Close</p>
+                                    </button>
+                                </div>
+                            </div>           
+                        </div>
+                    </div>
+                    
+                        
+                    </div>
+                </div>
             </div>
+            
         </main>
-        <div style="float: right;">
-            <div >
-                <button id="openShoeAdder" class="button" style="background-color: lime;">
-                    <h4>Add new shoe</h4>
-                </button>
-            </div>
-            <div id="shoeAdd" style="display: none;">
-                <h3>Here you can add a new shoe</h3>
-                <input type="text" class = "shoeInput" id = "shoeLink"placeholder="Enter link to the shoe here..." ><br>
-                <input type="text" class = "shoeInput" id = "shoeName"placeholder="Enter the name of the shoe here..." ><br>
-                <input type="text" class = "shoeInput" id = "shoePic"placeholder="Enter link to the picture of the shoe here..." ><br>
-                <select name="types" id="shoeType" style="border: solid 2px black;">
-                    <option value="0">Choose which shoe it resembles...</option>
-                    <option value="1">Air Forces</option>
-                    <option value="2">Jordans</option>
-                    <option value="3">Vans</option>
-                    <option value="4">Dunks</option>
-                </select>
-                <p class="text"> (Enter 1 if it resembles Air Forces, 2 if Jordans, 3 if Vans and 4 if Dunks)</p>
 
-                
-
-
-                <div style="display: flex;">
-                    <div>
-                        <button class="button" id="submitNewShoe">
-                            <p>Submit</p>
-                        </button>
-                    </div>
-                    <div style="align-self: flex-end;">
-                        <button class="button" id="closeShoeAdder">
-                            <p>Close</p>
-                        </button>
-                    </div>
-                </div>           
-            </div>
-        </div>
         
         
+          
+
+        
+        <footer>
+            <div id="footerDiv">
+                My gmail: dmitivlasiuk@gmail.com
+            </div>
+        </footer>
         <script src="object_script.js"></script>
         
     </body>
