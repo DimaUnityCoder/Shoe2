@@ -105,7 +105,7 @@ function lookFor(array, value){
         }
     }
 }
-//this function adds new products to our temporary storage (unnecesarry and can be simplified),
+//this function adds new products to our temporary storage (unnecesarry, will probably rework it),
 // also adds fancy effects to fields where value is missing
 function addNewProduct(link, name, picLink,type){
     if(
@@ -122,6 +122,7 @@ function addNewProduct(link, name, picLink,type){
         )
 
     {
+        
         console.log(type.value)
         productId.push(productId.length)
         productPicLink.push(picLink)
@@ -129,6 +130,10 @@ function addNewProduct(link, name, picLink,type){
         productLink.push(link)
         productType.push(type)
         savePosts()
+        document.getElementById("shoePic").value = ''
+        document.getElementById("shoeName").value=''
+        document.getElementById("shoeLink").value=''
+        document.getElementById("shoeType").value='0'
         
     }  
     else{
@@ -169,7 +174,8 @@ function openShoeAdderWindow(){
     openShoeAdder.style.display = "none"; 
 }
 //before this function existed, if i were to call 
-//"buildShoePage" more than x times, it would display the same products x times. this function removes old product sections
+//"buildShoePage" x times, it would display the same products x times. this function removes old product sections
+// and makes it so all products are shown only once
 function removePreviousElements(){
     while(theProductScreen.firstChild){
         theProductScreen.removeChild(theProductScreen.firstChild)
