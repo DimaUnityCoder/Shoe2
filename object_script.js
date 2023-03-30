@@ -214,10 +214,14 @@ function buildShoePage(acceptableType){
             prodBox.style.padding = "10px 10px 10px 10px"
             prodBox.id = productId[i]
             imageInLink.href = productLink[i]
+            imageInLink.target="_blank"
+            imageInLink.rel="noopener noreferrer"
             image.src = productPicLink[i]
             prodName.innerText = productName[i]
             prodLink.innerText = "Buy it here"
             prodLink.href = productLink[i]  
+            prodLink.target="_blank"
+            prodLink.rel="noopener noreferrer"
             imageContainer.style.textAlign = "center"
         }
         else{
